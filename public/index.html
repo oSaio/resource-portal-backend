@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Equipment Portal</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      form {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background: #0066cc;
+        color: white;
+        border: none;
+        font-weight: bold;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>IT Equipment Portal</h1>
+
+    <h2>Available Resources</h2>
+    <div id="resource-list">loading resources...</div>
+
+    <h2>Request a Resource</h2>
+    <form id="booking-form">
+      <label>Select Item:</label>
+      <select id="resource-select" required></select>
+
+      <label>Your Name:</label>
+      <input type="text" id="user-name" placeholder="e.g. Ahmad Ali" required />
+
+      <label>Needed Date:</label>
+      <input type="date" id="booking-date" required />
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <p id="message"></p>
+
+    <hr style="margin: 40px 0" />
+
+    <h2>Admin Dashboard: All Bookings</h2>
+    <table
+      border="1"
+      cellpadding="8"
+      style="width: 100%; border-collapse: collapse; margin-top: 10px"
+    >
+      <thead>
+        <tr style="background: #f2f2f2; text-align: left">
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Resource</th>
+          <th>Booking Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="admin-bookings-table">
+        <tr>
+          <td colspan="5">Loading bookings...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
